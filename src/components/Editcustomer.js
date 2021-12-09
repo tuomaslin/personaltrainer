@@ -36,7 +36,7 @@ export default function Editcustomer(props) {
 
 	const handleInputChange = (event) => {
 		setCustomer({...customer, [event.target.name]: event.target.value})
-	}
+	};
 
 	const updateCustomer = () => {
     props.updateCustomer(customer, props.customer.links[0].href);
@@ -120,5 +120,5 @@ export default function Editcustomer(props) {
         </DialogActions>
       </Dialog>
 		</div>
-  )
+  );
 };

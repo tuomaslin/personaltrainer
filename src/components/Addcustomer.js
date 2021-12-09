@@ -28,12 +28,12 @@ export default function Addcustomer(props) {
 
 	const handleInputChange = (event) => {
 		setCustomer({...customer, [event.target.name]: event.target.value})
-	}
+	};
 
 	const addCustomer = () => {
 		props.saveCustomer(customer);
 		handleClose();
-	}
+	};
 
 	return (
 		<div>
@@ -112,5 +112,5 @@ export default function Addcustomer(props) {
         </DialogActions>
       </Dialog>
 		</div>
-  )
-}
+  );
+};

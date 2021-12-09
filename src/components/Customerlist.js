@@ -16,7 +16,7 @@ export default function Customerlist() {
     .then(response => response.json())
     .then(data => setCustomers(data.content))
     .catch(err => console.error(err));
-  }
+  };
 
   const deleteCustomer = (params) => {
     if (window.confirm('Are you sure you want to delete this customer?')) {
@@ -85,6 +85,6 @@ export default function Customerlist() {
         </AgGridReact>
       </div>      
     </div>
-  )
+  );
 
-}
+};

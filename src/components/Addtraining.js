@@ -48,7 +48,7 @@ export default function Addtraining(props) {
             fullWidth
             variant="standard"
           />
-					 <TextField
+					<TextField
             margin="dense"
             name="date"
             placeholder="2021-12-11T18:37:04.087+02:00"
@@ -83,5 +83,5 @@ export default function Addtraining(props) {
         </DialogActions>
       </Dialog>
 		</div>
-  )
-}
+  );
+};

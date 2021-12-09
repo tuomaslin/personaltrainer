@@ -15,7 +15,7 @@ export default function Traininglist() {
     .then(response => response.json())
     .then(data => setTrainings(data))
     .catch(err => console.error(err));
-  }
+  };
 
   const deleteTraining = (params) => {
     if (window.confirm('Are you sure you want to delete this training?')) {
@@ -52,7 +52,7 @@ export default function Traininglist() {
     {headerName: 'Delete', cellRendererFramework: function(params) {
       return <Button size="small" variant="outlined" color="error"
       onClick={() => deleteTraining(params.data.id)}>Delete</Button>
-    }}    
+    }}
   ];
 
   return (
@@ -73,6 +73,6 @@ export default function Traininglist() {
         </AgGridReact>
       </div>
     </div>
-  )
+  );
 
 };
