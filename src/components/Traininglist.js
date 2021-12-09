@@ -18,7 +18,6 @@ export default function Traininglist() {
   }
 
   const deleteTraining = (params) => {
-    console.log(params)
     if (window.confirm('Are you sure you want to delete this training?')) {
       fetch(`https://customerrest.herokuapp.com/api/trainings/${params}`, {method: 'DELETE'})
       .then(() => fetchData())
@@ -27,7 +26,6 @@ export default function Traininglist() {
   };
 
   const saveTraining = (training) => {
-    console.log("saveTraining " + training)
     fetch('https://customerrest.herokuapp.com/api/trainings', {
     method: 'POST',
     headers: {
@@ -47,8 +45,7 @@ export default function Traininglist() {
     {headerName: 'Delete', cellRendererFramework: function(params) {
         return <Button size="small" variant="outlined" color="error"
         onClick={() => deleteTraining(params.data.id)}>Delete</Button>
-    }},
-    
+    }}    
   ];
 
   return (
@@ -67,7 +64,7 @@ export default function Traininglist() {
           rowData={trainings}
         >
         </AgGridReact>
-      </div>      
+      </div>
     </div>
   )
 

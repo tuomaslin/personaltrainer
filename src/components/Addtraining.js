@@ -7,7 +7,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 
 export default function Addtraining(props) {
-  console.log(props)
 	const [open, setOpen] = React.useState(false);
 	const [training, setTraining] = React.useState({
 		activity: '',
@@ -29,7 +28,6 @@ export default function Addtraining(props) {
 	}
 
 	const addTraining = () => {
-    console.log("addTraining " + props)
 		props.saveTraining(training);
 		handleClose();
 	}
