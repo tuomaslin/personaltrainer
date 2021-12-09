@@ -51,6 +51,7 @@ export default function Addtraining(props) {
 					 <TextField
             margin="dense"
             name="date"
+            placeholder="2021-12-11T18:37:04.087+02:00"
 						value={training.date}
 						onChange={e => handleInputChange(e)}
             label="Date"

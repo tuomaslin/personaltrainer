@@ -19,7 +19,8 @@ export default function Traininglist() {
 
   const deleteTraining = (params) => {
     if (window.confirm('Are you sure you want to delete this training?')) {
-      fetch(`https://customerrest.herokuapp.com/api/trainings/${params}`, {method: 'DELETE'})
+      fetch(`https://customerrest.herokuapp.com/api/trainings/${params}`, {
+      method: 'DELETE'})
       .then(() => fetchData())
       .catch(err => console.error(err));
     };
@@ -39,12 +40,18 @@ export default function Traininglist() {
 
   const columns = [
     {headerName: 'Activity', field: 'activity', sortable: true, filter: true},
-    {headerName: 'Date', field: 'date', sortable: true, filter: true},
+    {headerName: 'Date', valueGetter: (params) => {
+      return new Date(params.data.date).toLocaleString('fi-FI');
+    }, sortable: true, filter: true
+    },
     {headerName: 'Duration', field: 'duration', sortable: true, filter: true},
-    {headerName: 'Customer', field: 'customer.firstname', sortable: true, filter: true},
+    {headerName: 'Customer', valueGetter: (params) => {
+      return `${params.data.customer.firstname} ${params.data.customer.lastname}`;
+    }, sortable: true, filter: true
+    },
     {headerName: 'Delete', cellRendererFramework: function(params) {
-        return <Button size="small" variant="outlined" color="error"
-        onClick={() => deleteTraining(params.data.id)}>Delete</Button>
+      return <Button size="small" variant="outlined" color="error"
+      onClick={() => deleteTraining(params.data.id)}>Delete</Button>
     }}    
   ];
 
